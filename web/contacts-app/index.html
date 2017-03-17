@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="scripts.js"></script>
+</head>
+<body onload="onLoad()">
+<div class="inputForm">
+<h2>New Contact</h2>
+<table id="inputTable">
+    <tr><td>First name</td><td><input id="firstName" type="text" ></td> </tr>
+    <tr><td>Last name</td><td><input id="lastName" type="text" ></td></tr>
+    <tr><td>Phone</td><td><input id="phone" type="text" ></td></tr>
+    <tr><td>Street address</td><td><input id="street" type="text" ></td></tr>
+    <tr><td>City</td><td><input id="city" type="text" ></td></tr>
+</table>
+<div id="addButtonDiv" ><button id="addButton" onclick="onClicked()">Add</button></div>
+</div>
+
+<div class="resultsForm">
+<h2>Contacts</h2>
+<table id ="resultsTable">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th></th>
+            <th></th>
+        </tr>
+</table>
+</div>
+<div id="footer">Mikko Laitinen &copy 2017</div>
+</body>
+</html>
