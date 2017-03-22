@@ -3,35 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacts</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" type="text/css" href="con-style.css"/>
+
+    <link rel="stylesheet" type="text/css" href="material.min.css"/>
+    <script type="text/javascript" src="material.js"></script>
+
+    <script type="text/javascript" src="libs/lodash.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="contact.js"></script>
+    <script type="text/javascript" src="contact-store.js"></script>
+    <script type="text/javascript" src="contacts-table.js"></script>
+    <script type="text/javascript" src="buttons.js"></script>
+
+
 </head>
-<body onload="onLoad()">
-<div class="inputForm">
-<h2>New Contact</h2>
-<table id="inputTable">
-    <tr><td>First name</td><td><input id="firstName" type="text" ></td> </tr>
-    <tr><td>Last name</td><td><input id="lastName" type="text" ></td></tr>
-    <tr><td>Phone</td><td><input id="phone" type="text" ></td></tr>
-    <tr><td>Street address</td><td><input id="street" type="text" ></td></tr>
-    <tr><td>City</td><td><input id="city" type="text" ></td></tr>
-</table>
-<div id="addButtonDiv" ><button id="addButton" onclick="onClicked()">Add</button></div>
+<body onload="contactsApp.contactsTable.fillTable()">
+<div class="page">
+    <div class="co-input mdl-card mdl-shadow--3dp ">
+        <div class="co-title mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">New Contact</h2>
+        </div>
+        <div class="">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="firstName" type="text">
+                <label class="mdl-textfield__label">First name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="lastName" type="text">
+                <label class="mdl-textfield__label">Last name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="phone" type="text">
+                <label class="mdl-textfield__label">Phone</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="adress" type="text">
+                <label class="mdl-textfield__label">Street adress</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="city" type="text">
+                <label class="mdl-textfield__label">City</label>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button id="addButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                    onclick="contactsApp.buttons().onClicked()">Add
+            </button>
+        </div>
+    </div>
+
+    <div class="co-midle">
+    </div>
+
+    <div class="co-table-div ">
+        <div class="co-title mdl-card__title mdl-card--expand mdl-shadow--6dp">
+            <h2 class="mdl-card__title-text">New Contact</h2>
+        </div>
+        <table class="co-table mdl-data-table mdl-js-data-table mdl-shadow--6dp">
+            <!--caption class="co-caption mdl-card__title-text">Contacts</caption-->
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">First name</th>
+                <th class="mdl-data-table__cell--non-numeric">Last name</th>
+                <th class="mdl-data-table__cell--non-numeric">Phone</th>
+                <th class="mdl-data-table__cell--non-numeric">Address</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            <tbody id="resultsTable"></tbody>
+        </table>
+    </div>
+    <div id="footer">Mikko Laitinen &copy 2017</div>
 </div>
 
-<div class="resultsForm">
-<h2>Contacts</h2>
-<table id ="resultsTable">
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th></th>
-            <th></th>
-        </tr>
-</table>
-</div>
-<div id="footer">Mikko Laitinen &copy 2017</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+
+    // global variable
+    var modifyIndex = -1;
+
+    /*
+     var contacts=contactsApp.contactStore.loadContacts();
+
+     var filtered = _.filter(contacts, function (contact){
+
+     // just tämä
+     // return contact.firstname=='Mikko';
+     // sisältää tämän
+     return _.includes(contact.firstname.toLowerCase(),'mi');
+     });
+     console.log('filtered: '+filtered);
+
+     _.forEach(contacts, function (c) {
+     console.log('contacts: '+c.firstname);
+     })
+     */
+
+    /*
+     function test()
+     {
+     requestNumber = JSONRequest.post(
+     "http://localhost:49988/multi",
+     {
+     FirstReferenceNumber:"123456",
+     Count:3
+     },
+     function (requestNumber, value, exception) {
+     if (value) {
+     //  processResponse(value);
+     console.log(value);
+     } else {
+     // processError(exception);
+     }
+     }
+     );
+     }
+     */
+
+    var vaari = 999;
+    function test() {
+
+        var url = "http://localhost:49988/api/iban/";
+        var heders = {IbanNumber: "FI4250001510000023"};
+
+    }
+
+</script>
+
 </body>
 </html>

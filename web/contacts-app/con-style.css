@@ -1,0 +1,41 @@
+.html, body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background: linear-gradient(#e3f2fd , whitesmoke);
+}
+
+.page{
+    text-align: -webkit-center;
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
+.co-title{
+    background-color: #e0e0e0;
+}
+.co-input{
+    padding-bottom: 5px;
+}
+
+.co-midle{
+    margin: 20px;
+}
+.co-caption{
+    padding: 10px 0 0 10px;
+}
+
+.co-table-div{
+    width: 800px;
+    padding-bottom: 30px;
+}
+table{
+    width: 800px;
+}
+
+td{
+    white-space: normal;
+    word-break: break-all;
+}
+
+#footer{
+    margin: 20px;
+    bottom: 0;
+}
