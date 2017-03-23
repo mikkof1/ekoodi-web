@@ -5,7 +5,7 @@ contactsApp.contactsTable = (function () {
 
 
     function fillTable() {
-       var contacts = contactsApp.contactStore.loadContacts();
+        var contacts = contactsApp.contactStore.loadContacts();
         var table = document.getElementById("resultsTable");
         table.innerHTML = '';
         var i = 0;
@@ -25,12 +25,6 @@ contactsApp.contactsTable = (function () {
             edit.innerHTML = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="contactsApp.buttons().startEdit(' + i + ')">Edit</button>';
             del.innerHTML = '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="contactsApp.buttons().onDelete(' + i + ')">Delete</button>';
 
-            if (i % 2 == 0) {
-                row.className = 'evenRow';
-            }
-            else {
-                row.className = 'oddRow';
-            }
             i++;
         });
     }
