@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocker game</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="evilWall.js"></script>
+    <script type="text/javascript" src="drawGame.js"></script>
+
+
+
+</head>
+<body onload="">
+
+<div id="header"><h1>Blocker game</h1></div>
+<div id="canvasDiv">
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+
+</div>
+<div id="buttons">
+    <div id="start">
+        <button id="btnStart" onclick="gameApp.playGame.onStart()">Start game</button>
+    </div>
+    <div id="move">
+        <button id="btnUp" onmousedown="gameApp.playGame.mouseDown('up')" onmouseup = "gameApp.playGame.mouseUp()">up</button><br>
+		<button id="btnDown" onmousedown="gameApp.playGame.mouseDown('down')" onmouseup = "gameApp.playGame.mouseUp()">down</button>
+    </div>
+</div>
+
+<div id="footer">&copy; Mikko Laitinen 2017</div>
+
+    <script type="text/javascript" src="playGame.js"></script>
+<script>
+	var player;
+	gameApp.drawGame().drawDefault();
+	var youCanStartPlay=true;
+	
+	var mover;	
+	var mouseState ="free";
+	var keyState;
+	window.addEventListener('keydown', function(e){gameApp.playGame.keyDown(e);}, true);
+	window.addEventListener('keyup', function(e){gameApp.playGame.keyUp();}, true);
+	
+</script>
+
+
+</body>
+</html>
