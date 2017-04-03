@@ -1,31 +1,32 @@
 * {
-   /* border: 1px solid black;*/
+    /* border: 1px solid black;*/
 }
 
 body {
     text-align: center;
-	background-color: #1f601f;
+    background-color: #1f601f;
 }
 
 #header {
     padding: 3px;
 }
 
-#btnStart{
-	height: 50px;
-	width: 120px;
+button {
+    margin-top: 6px;
 }
 
-button{
-	margin-top: 6px;
+#btnStart {
+    height: 50px;
+    width: 120px;
 }
-#move button{
-	height: 40px;
-	width: 80px;
+
+#move button {
+    height: 40px;
+    width: 80px;
 }
 
 #footer {
-	position: absolute;
+    position: absolute;
     padding: 3px;
     bottom: 0;
 }
